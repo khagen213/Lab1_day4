@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, td {
+  border: 1px solid rgb(0, 0, 0);
+}
+</style>
+</head>
+<body>
+
+<p>Click the buttons to create and delete row(s) for the table.</p>
+
+<table id="myTable">
+  <tr>
+    <td>Row1 col1</td>
+    <td>Row1 col2</td>
+  </tr>
+  <tr>
+    <td>Row2 col1</td>
+    <td>Row2 col2</td>
+  </tr>
+  <tr>
+    <td>Row3 col1</td>
+    <td>Row3 col2</td>
+  </tr>
+
+  <tr>
+    <td>Row4 col1</td>
+    <td>Row4 col2</td>
+  </tr>
+
+  <tr>
+    <td>Row5 col1</td>
+    <td>Row5 col2</td>
+  </tr>
+</table>
+<br>
+
+<button onclick="InsertFunction()">Insert row</button>
+<button onclick="DeleteFunction()">Delete row</button>
+
+<p id="msg"></p>
+
+<script>
+
+    let a = 5;
+    let b = 5;
+
+function InsertFunction() {
+    a++
+    b++
+    document.getElementById("msg").innerHTML=""
+  var table = document.getElementById("myTable");
+  var row = table.insertRow(-1);
+  var cell1 = row.insertCell(-1);
+  var cell2 = row.insertCell(-1);
+  cell1.innerHTML = "Row"+a+" Col1";
+  cell2.innerHTML = "Row"+a+" Col2";
+} 
+
+   
+
+function DeleteFunction() {
+
+    if(b<1){
+        document.getElementById("msg").innerHTML="Message: Sorry, There is no more rows to delete."
+    }else{
+        b--
+        document.getElementById("myTable").deleteRow(0);
+    }
+
+
+
+}
+
+
+</script>
+
+</body>
+</html>
